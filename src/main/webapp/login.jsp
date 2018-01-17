@@ -13,7 +13,7 @@
 		<header class="container-fluid">			
 			<div class="row">
 				<div class="register col-xs-4 col-sm-4 col-md-4 col-lg-4"><span><img src="images/bananas.png"> Welcome to BananaGEST!</span></div>
-				<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"><h1>Platanitodelamaldad GEST</h1></div>
+				<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"><h1>BANANA GEST</h1></div>
 				<div class="register col-xs-4 col-sm-4 col-md-4 col-lg-4"><h4><a href="#">Registrarse</a></h4></div>
 			</div>		
 		</header>
