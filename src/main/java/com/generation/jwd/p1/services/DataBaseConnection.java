@@ -1,9 +1,14 @@
 package com.generation.jwd.p1.services;
 
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.Properties;
 
 import javax.swing.JOptionPane;
 
@@ -11,12 +16,29 @@ public class DataBaseConnection {
 
 	public static void main(String[] args) {
 		
-		String url = "jdbc:mysql://127.0.0.1:3306/bananagest";
-		String user = "root";
-		String password = "@p0cal1p515";
+		Properties prop = new Properties();
+		InputStream input = null;
+		
+//		String url = "jdbc:mysql://127.0.0.1:3306/bananagest";
+//		String user = "root";
+//		String password = "fred3605";
 		
 		try {
-			Class.forName("com.mysql.jdbc.Driver").newInstance();
+			
+			input = new FileInputStream("C:\\Users\\Arranque 1\\git\\PF02_BananaGest\\src\\main\\webapp\\doc\\config.properties");
+			prop.load(input);
+			
+			String driver = prop.getProperty("jdbc.driver");
+			if (driver != null) {
+			    Class.forName(driver) ;
+			}
+			
+			String url = prop.getProperty("jdbc.url");
+			String user = prop.getProperty("jdbc.user");
+			String password = prop.getProperty("jdbc.password");
+			
+			
+			//Class.forName("com.mysql.jdbc.Driver").newInstance();
 			
 			Connection bananaconn = DriverManager.getConnection(url, user, password);
 			
@@ -34,6 +56,7 @@ public class DataBaseConnection {
 //			
 //			rs.close();
 //			selectUser.close();
+			//bananaconn.close();
 			bananaconn.close();
 			
 		} catch (Exception e) {
