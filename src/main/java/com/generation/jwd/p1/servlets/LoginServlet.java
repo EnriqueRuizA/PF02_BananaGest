@@ -1,7 +1,9 @@
 package com.generation.jwd.p1.servlets;
 
 import java.io.IOException;
-
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -11,6 +13,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.generation.jwd.p1.beans.LoginBean;
+import com.generation.jwd.p1.beans.UserBean;
+import com.mysql.jdbc.PreparedStatement;
 
 
 
@@ -31,21 +35,50 @@ public class LoginServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-//		LoginBean loginBean = new LoginBean();
-//		loginBean.setUser(request.getParameter("user"));
-//		loginBean.setPassword(request.getParameter("password"));
-//		
-//		HttpSession session = request.getSession();
-//
-//		if(loginBean.validator() == true) {
-//			session.setAttribute("comprobar", "Datos correctos");
-//			session.setAttribute("User", loginBean.getUser());
-//			request.getRequestDispatcher("homeuser.jsp").forward(request, response);
-//			
-//		} else {
-//			
-//			session.setAttribute("comprobar", "Datos incorrectos");
-//			request.getRequestDispatcher("login.jsp").forward(request, response);
-//		}
+		UserBean userBean = new UserBean();
+		userBean.setName_user(request.getParameter("name_user"));
+		userBean.setPassword_user(request.getParameter("password_user"));
+		
+		HttpSession session = request.getSession();
+		
+		String url = "jdbc:mysql://127.0.0.1:3306/bananagest";
+		String user = "root";
+		String password = "@p0cal1p515";
+		
+		try {
+			Class.forName("com.mysql.jdbc.Driver").newInstance();
+			
+			Connection bananaconn = DriverManager.getConnection(url, user, password);
+			
+			System.out.println("Conexion realizada");
+			
+			java.sql.PreparedStatement selectUser = bananaconn.prepareStatement("SELECT email_user, password_user FROM users");
+			
+			ResultSet rs = selectUser.executeQuery();
+			
+			while(rs.next()) {
+				int id_user = rs.getInt(1);
+				String name_user = rs.getString(2);
+				String email_user = rs.getString(4);
+				String password_user = rs.getString(5);
+				
+				if(email_user.equals(userBean.getName_user()) && password_user.equals(userBean.getPassword_user())) {
+					session.setAttribute("id_user", id_user);
+					session.setAttribute("name_user", name_user);
+					request.getRequestDispatcher("homeuser.jsp").forward(request, response);
+					
+				} else {
+					request.getRequestDispatcher("login.jsp").forward(request, response);
+				}
+			}
+			
+			rs.close();
+			selectUser.close();
+			bananaconn.close();
+			
+		} catch (Exception e) {
+			System.out.println("Exception" + e.getMessage());	
+		} 
+
 	}
 }

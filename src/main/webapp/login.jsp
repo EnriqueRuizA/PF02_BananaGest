@@ -25,11 +25,11 @@
 						<p id="error"></p>
 						<div class="intro_user">
 							<img class="alinear" src="images/user.png"/>
-							<input type="text" name="user" placeholder="User" required="true" autofocus/>
+							<input type="text" name="name_user" placeholder="User" required="true" autofocus/>
 						</div>
 						<div class="intro_user">
 							<img class="alinear" src="images/lock.png"/>
-							<input type="password" name="password" placeholder="Password" maxlength="12" minlength="4" required="true"/>
+							<input type="password" name="password_user" placeholder="Password" maxlength="12" minlength="4" required="true"/>
 						</div>
 						<div class="intro_user">
 						<a class="password" href="#">He olvidado mi contraseña</a>

@@ -10,7 +10,7 @@
 	</head>
 	<body>
 		<header>
-			<div class="head"><img src="images/profile.png" width="55" height="55"><h3>Bienvenido/a ${User}</h3>
+			<div class="head"><img src="images/profile.png" width="55" height="55"><h3>Bienvenido/a ${name_user}</h3>
             <a href="#">Editar perfil</a></div>
             <div class="head"><h1>Banana GEST</h1><a href="homeuser.jsp"><img src="images/bananas_medio.png"/></a></div>
             <div class="head"><h4><a href="login.jsp">Logout</a></h4></div>    
