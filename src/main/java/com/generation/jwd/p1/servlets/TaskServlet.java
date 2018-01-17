@@ -34,8 +34,7 @@ public class TaskServlet extends HttpServlet {
 	     task.setNotes(request.getParameter("notes"));
 	     task.setResponsable(request.getParameter("responsable"));
 	     task.setPriority(request.getParameter("priority"));
-	     task.setUrlFile(request.getParameter("urlFile"));
-	        
+	     	        
 	     HttpSession session_name= (HttpSession)request.getSession();
 	        
 	     if(task.validate() == true) {

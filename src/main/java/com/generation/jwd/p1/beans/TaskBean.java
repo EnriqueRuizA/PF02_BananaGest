@@ -15,14 +15,13 @@ public class TaskBean implements Serializable {
 	private String notes;
 	private String responsable;
 	private String priority;
-	private String urlFile;
 	private String status;
 	
 	public TaskBean() {};
 	
 	public TaskBean(String nameTask, String description, String dateStart, 
 					String dateFinish, String notes, String responsable, 
-					String priority, String urlFile, String status) {
+					String priority, String status) {
 		
 		this.nameTask = nameTask;
 		this.description = description;
@@ -31,7 +30,6 @@ public class TaskBean implements Serializable {
 		this.notes = notes;
 		this.responsable = responsable;
 		this.priority = priority;
-		this.urlFile = urlFile;
 		this.status = status;
 	}
 	
@@ -91,14 +89,6 @@ public class TaskBean implements Serializable {
 		this.priority = priority;
 	}
 
-	public String getUrlFile() {
-		return urlFile;
-	}
-
-	public void setUrlFile(String urlFile) {
-		this.urlFile = urlFile;
-	}	
-	
 	public void setStatus(String status) {
 		this.status = status;
 	}
@@ -106,6 +96,7 @@ public class TaskBean implements Serializable {
 	public String getStatus() {
 		return status;
 	}
+	
 	public boolean validate () {
 		return this.nameTask.equals("Task");
 	}
