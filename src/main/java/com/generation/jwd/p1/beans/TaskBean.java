@@ -8,6 +8,8 @@ public class TaskBean implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+	
+	private int id_task;
 	private String name_task;
 	private String desc_task;
 	private String dateBegin_task;
@@ -15,13 +17,23 @@ public class TaskBean implements Serializable {
 	private String notes_task;
 	private String resp_task;
 	private String status_task;
+	private int id_project;
 	
+	public int getId_project() {
+		return id_project;
+	}
+
+	public void setId_project(int id_project) {
+		this.id_project = id_project;
+	}
+
 	public TaskBean() {};
 	
-	public TaskBean(String name_task, String desc_task, String dateBegin_task, 
+	public TaskBean(int id_task, String name_task, String desc_task, String dateBegin_task, 
 					String dateEnd_task, String notes_task, String resp_task, 
-					String urlFile, String status_task) {
+					String urlFile, String status_task, int id_project) {
 		
+		this.id_task = getIdTask();
 		this.name_task = getNameTask();
 		this.desc_task = getDescription();
 		this.dateBegin_task = getdateStart();
@@ -29,6 +41,12 @@ public class TaskBean implements Serializable {
 		this.notes_task = getNotes();
 		this.resp_task = getResponsable();
 		this.status_task = getStatus();
+		this.id_project = getId_project();
+	}
+	
+	
+	public int getIdTask() {
+		return id_task;
 	}
 	
 	public String getNameTask() {

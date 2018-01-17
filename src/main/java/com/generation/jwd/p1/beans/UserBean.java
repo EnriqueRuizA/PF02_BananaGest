@@ -6,52 +6,60 @@ public class UserBean implements Serializable {
 
 	
 	private static final long serialVersionUID = 1L;
-	private String name;
-	private String surname;
-	private String email;
-	private String password;
+	private String name_user;
+	private String surname_user;
+	private String email_user;
+	private String password_user;
+	private int id_user;
 	
 	public UserBean() {
 	}
 
-	public UserBean(String name, String surname, String email){
-		this.name = name;
-		this.surname = surname;
-		this.email = email;
-	}
-	
-	public UserBean(String email, String password) {
-		this.email = email;
-		this.password = password;		
-	}	
-	
-	public String getName() {
-		return name;
-	}
-	
-	public void setName(String name) {
-		this.name = name;
-	}
-	public String getSurname() {
-		return surname;
-	}
-	public void setSurname(String surname) {
-		this.surname = surname;
+	public String getName_user() {
+		return name_user;
 	}
 
-	public String getEmail() {
-		return email;
-	}
-	public void setEmail(String email) {
-		this.email = email;
+	public void setName_user(String name_user) {
+		this.name_user = name_user;
 	}
 
-	public String getPassword() {
-		return password;
+	public String getSurname_user() {
+		return surname_user;
 	}
 
-	public void setPassword(String password) {
-		this.password = password;
+	public void setSurname_user(String surname_user) {
+		this.surname_user = surname_user;
 	}
+
+	public String getEmail_user() {
+		return email_user;
+	}
+
+	public void setEmail_user(String email_user) {
+		this.email_user = email_user;
+	}
+
+	public String getPassword_user() {
+		return password_user;
+	}
+
+	public void setPassword_user(String password_user) {
+		this.password_user = password_user;
+	}
+
+	public int getId_user() {
+		return id_user;
+	}
+
+	public void setId_user(int id_user) {
+		this.id_user = id_user;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
+
+
 }
 

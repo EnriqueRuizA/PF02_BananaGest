@@ -33,7 +33,6 @@ public class TaskServlet extends HttpServlet {
 	     task.setdateFinish(request.getParameter("dateFinish"));
 	     task.setNotes(request.getParameter("notes"));
 	     task.setResponsable(request.getParameter("responsable"));
-	     task.setPriority(request.getParameter("priority"));
 	     	        
 	     HttpSession session_name= (HttpSession)request.getSession();
 	        
