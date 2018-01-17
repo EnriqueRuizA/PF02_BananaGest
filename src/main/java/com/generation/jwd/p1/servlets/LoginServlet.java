@@ -31,21 +31,21 @@ public class LoginServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		LoginBean loginBean = new LoginBean();
-		loginBean.setUser(request.getParameter("user"));
-		loginBean.setPassword(request.getParameter("password"));
-		
-		HttpSession session = request.getSession();
-
-		if(loginBean.validator() == true) {
-			session.setAttribute("comprobar", "Datos correctos");
-			session.setAttribute("User", loginBean.getUser());
-			request.getRequestDispatcher("homeuser.jsp").forward(request, response);
-			
-		} else {
-			
-			session.setAttribute("comprobar", "Datos incorrectos");
-			request.getRequestDispatcher("login.jsp").forward(request, response);
-		}
+//		LoginBean loginBean = new LoginBean();
+//		loginBean.setUser(request.getParameter("user"));
+//		loginBean.setPassword(request.getParameter("password"));
+//		
+//		HttpSession session = request.getSession();
+//
+//		if(loginBean.validator() == true) {
+//			session.setAttribute("comprobar", "Datos correctos");
+//			session.setAttribute("User", loginBean.getUser());
+//			request.getRequestDispatcher("homeuser.jsp").forward(request, response);
+//			
+//		} else {
+//			
+//			session.setAttribute("comprobar", "Datos incorrectos");
+//			request.getRequestDispatcher("login.jsp").forward(request, response);
+//		}
 	}
 }
