@@ -8,96 +8,87 @@ public class TaskBean implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private String nameTask;
-	private String description;
-	private String dateStart;
-	private String dateFinish;
-	private String notes;
-	private String responsable;
-	private String priority;
-	private String status;
+	private String name_task;
+	private String desc_task;
+	private String dateBegin_task;
+	private String dateEnd_task;
+	private String notes_task;
+	private String resp_task;
+	private String status_task;
 	
 	public TaskBean() {};
 	
-	public TaskBean(String nameTask, String description, String dateStart, 
-					String dateFinish, String notes, String responsable, 
-					String priority, String status) {
+	public TaskBean(String name_task, String desc_task, String dateBegin_task, 
+					String dateEnd_task, String notes_task, String resp_task, 
+					String urlFile, String status_task) {
 		
-		this.nameTask = nameTask;
-		this.description = description;
-		this.dateStart = dateStart;
-		this.dateFinish = dateFinish;
-		this.notes = notes;
-		this.responsable = responsable;
-		this.priority = priority;
-		this.status = status;
+		this.name_task = getNameTask();
+		this.desc_task = getDescription();
+		this.dateBegin_task = getdateStart();
+		this.dateEnd_task = getdateFinish();
+		this.notes_task = getNotes();
+		this.resp_task = getResponsable();
+		this.status_task = getStatus();
 	}
 	
 	public String getNameTask() {
-		return nameTask;
+		return name_task;
 	}
 
 	public void setNameTask(String nameTask) {
-		this.nameTask = nameTask;
+		this.name_task = nameTask;
 	}
 
 	public String getDescription() {
-		return description;
+		return desc_task;
 	}
 
 	public void setDescription(String description) {
-		this.description = description;
+		this.desc_task = description;
 	}
 
 	public String getdateStart() {
-		return dateStart;
+		return dateBegin_task;
 	}
 
 	public void setdateStart(String dateStart) {
-		this.dateStart = dateStart;
+		this.dateBegin_task = dateStart;
 	}
 
 	public String getdateFinish() {
-		return dateFinish;
+		return dateEnd_task;
 	}
 
 	public void setdateFinish(String dateFinish) {
-		this.dateFinish = dateFinish;
+		this.dateEnd_task = dateFinish;
 	}
 
 	public String getNotes() {
-		return notes;
+		return notes_task;
 	}
 
 	public void setNotes(String notes) {
-		this.notes = notes;
+		this.notes_task = notes;
 	}
 
 	public String getResponsable() {
-		return responsable;
+		return resp_task;
 	}
 
 	public void setResponsable(String responsable) {
-		this.responsable = responsable;
+		this.resp_task = responsable;
 	}
 
-	public String getPriority() {
-		return priority;
-	}
 	
-	public void setPriority(String priority) {
-		this.priority = priority;
-	}
-
 	public void setStatus(String status) {
-		this.status = status;
+		this.status_task = status;
 	}
 	
 	public String getStatus() {
-		return status;
+		return status_task;
 	}
-	
 	public boolean validate () {
-		return this.nameTask.equals("Task");
+		return this.status_task.equals("Task");
 	}
 }
+
