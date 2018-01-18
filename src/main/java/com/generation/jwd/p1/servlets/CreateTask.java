@@ -4,9 +4,9 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
-import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Properties;
 
@@ -15,8 +15,13 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
-@WebServlet("/createTask")
+import com.generation.jwd.p1.beans.TaskBean;
+import java.sql.Timestamp;
+
+
+@WebServlet("/createtask")
 public class CreateTask extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -58,19 +63,53 @@ public class CreateTask extends HttpServlet {
 			
 			System.out.println("Conexion realizada");
 			
+			TaskBean createTask = new TaskBean();
 			
-			PreparedStatement createtask = 
+			createTask.setName_task(request.getParameter("name_task"));
+			createTask.setDesc_task(request.getParameter("desc_task"));
+			createTask.convertStringToTimestamp(request.getParameter("dateBegin_task"));
+			createTask.convertStringToTimestamp(request.getParameter("dateEnd_task"));
+			System.out.println("datos fechas");
+//			createTask.setDateBegin_task(request.getParameter("dateBegin_task"));
+//			createTask.setDateEnd_task(request.getParameter("dateEnd_task"));
+			createTask.setNotes_task(request.getParameter("notes_task"));
+			createTask.setStatus_task(request.getParameter("status_task"));
+						
+			
+			
+			System.out.println("se ha recogido un dato del formulario");		
+			
+			PreparedStatement addTask = 
 					bananaconn.prepareStatement(
-							"INSERT INTO task(id_task, name_task, desc_task, dateBegin_task, dateEnd_task, idResponsible_task, notes_task, status_task, id_project, id_user) VALUES (?,?,?,?,?)",
+							"INSERT INTO tasks(name_task, desc_task, dateBegin_task, dateEnd_task, notes_task, status_task) VALUES (?, ?, ?, ?, ?, ?)",
 							Statement.RETURN_GENERATED_KEYS);
-					
+				
+			addTask.setString(1, "name_task");
+			addTask.setString(2, "desc_task");
+			addTask.setTimestamp(3, createTask.convertStringToTimestamp(request.getParameter("dateBegin_task")));
+			addTask.setTimestamp(4, createTask.convertStringToTimestamp(request.getParameter("dateEnd_task")));
+			addTask.setString(5, "notes_task");
+			addTask.setString(6, "status_task");
+			
+			addTask.executeUpdate();
+			System.out.println("se ha añadido un campo a la BBDD");
+			
+			HttpSession session_name= (HttpSession)request.getSession();
 			
 			
+			if(createTask.validate() == true) {
+		    	 session_name.setAttribute("saveTask", "A new task has been created");
+		    	 session_name.setAttribute("task", createTask.getName_task());
+		         request.getRequestDispatcher("homeuser.jsp").forward(request, response);
+		     } else {
+		    	 session_name.setAttribute("saveTask", "error: a new task has not created");
+		         request.getRequestDispatcher("createtask.jsp").forward(request, response);
+		     }
 			bananaconn.close();
 			System.out.println("conexion cerrada");
 			
 		} catch (Exception e) {
-			System.out.println("Exception" + e.getMessage());
+			System.out.println("error" + e.getMessage());
 			
 		}
 		

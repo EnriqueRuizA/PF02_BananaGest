@@ -1,6 +1,11 @@
 package com.generation.jwd.p1.beans;
 
 import java.io.Serializable;
+import java.sql.Date;
+import java.sql.Timestamp;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 
 public class TaskBean implements Serializable {
 	
@@ -12,8 +17,8 @@ public class TaskBean implements Serializable {
 	private int id_task;
 	private String name_task;
 	private String desc_task;
-	private String dateBegin_task;
-	private String dateEnd_task;
+	private Timestamp dateBegin_task;
+	private Timestamp dateEnd_task;
 	private int idResponsible_task;
 	private String notes_task;
 	private String status_task;
@@ -30,8 +35,8 @@ public class TaskBean implements Serializable {
 
 	public TaskBean() {};
 	
-	public TaskBean(int id_task, String name_task, String desc_task, String dateBegin_task, 
-					String dateEnd_task, int idResponsible_task, String notes_task,
+	public TaskBean(int id_task, String name_task, String desc_task, Timestamp dateBegin_task, 
+			Timestamp dateEnd_task, int idResponsible_task, String notes_task,
 					String status_task, int id_project, int id_user) {
 		
 		this.id_task = id_task;
@@ -70,19 +75,19 @@ public class TaskBean implements Serializable {
 		this.desc_task = desc_task;
 	}
 
-	public String getDateBegin_task() {
+	public Timestamp getDateBegin_task() {
 		return dateBegin_task;
 	}
 
-	public void setDateBegin_task(String dateBegin_task) {
+	public void setDateBegin_task(Timestamp dateBegin_task) {
 		this.dateBegin_task = dateBegin_task;
 	}
 
-	public String getDateEnd_task() {
+	public Timestamp getDateEnd_task() {
 		return dateEnd_task;
 	}
 
-	public void setDateEnd_task(String dateEnd_task) {
+	public void setDateEnd_task(Timestamp dateEnd_task) {
 		this.dateEnd_task = dateEnd_task;
 	}
 
@@ -122,8 +127,26 @@ public class TaskBean implements Serializable {
 		return serialVersionUID;
 	}
 	
+	public boolean validate() {
+		
+		boolean bool = false;
+		if("formtask" != null) {
+			bool = true;
+			
+		}
+		return bool;
+	}
 	
-	
+	public Timestamp convertStringToTimestamp(String str_date) throws ParseException {
+	    
+	      DateFormat formatter;
+	      formatter = new SimpleDateFormat("yyyy/MM/dd");
+	      Date date = (Date) formatter.parse(str_date);
+	      java.sql.Timestamp timeStampDate = new Timestamp(date.getTime());
 
+	      return timeStampDate;
+	    
+	}
+	
 }
 
