@@ -60,7 +60,9 @@ public class CreateTask extends HttpServlet {
 			
 			
 			PreparedStatement createtask = 
-					bananaconn.prepareStatement("INSERT INTO task(id_task, name_task, desc_task, dateBegin_task, dateEnd_task, idResponsible_task, notes_task, status_task, id_project, id_user) VALUES (?,?,?,?,?)", Statement.RETURN_GENERATED_KEYS);
+					bananaconn.prepareStatement(
+							"INSERT INTO task(id_task, name_task, desc_task, dateBegin_task, dateEnd_task, idResponsible_task, notes_task, status_task, id_project, id_user) VALUES (?,?,?,?,?)",
+							Statement.RETURN_GENERATED_KEYS);
 					
 			
 			

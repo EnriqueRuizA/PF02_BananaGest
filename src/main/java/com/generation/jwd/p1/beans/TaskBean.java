@@ -14,10 +14,11 @@ public class TaskBean implements Serializable {
 	private String desc_task;
 	private String dateBegin_task;
 	private String dateEnd_task;
+	private int idResponsible_task;
 	private String notes_task;
-	private String resp_task;
 	private String status_task;
 	private int id_project;
+	private int id_user;
 	
 	public int getId_project() {
 		return id_project;
@@ -30,83 +31,99 @@ public class TaskBean implements Serializable {
 	public TaskBean() {};
 	
 	public TaskBean(int id_task, String name_task, String desc_task, String dateBegin_task, 
-					String dateEnd_task, String notes_task, String resp_task, 
-					String urlFile, String status_task, int id_project) {
+					String dateEnd_task, int idResponsible_task, String notes_task,
+					String status_task, int id_project, int id_user) {
 		
-		this.id_task = getIdTask();
-		this.name_task = getNameTask();
-		this.desc_task = getDescription();
-		this.dateBegin_task = getdateStart();
-		this.dateEnd_task = getdateFinish();
-		this.notes_task = getNotes();
-		this.resp_task = getResponsable();
-		this.status_task = getStatus();
-		this.id_project = getId_project();
+		this.id_task = id_task;
+		this.name_task = name_task;
+		this.desc_task = desc_task;
+		this.dateBegin_task = dateBegin_task;
+		this.dateEnd_task = dateEnd_task;
+		this.idResponsible_task = idResponsible_task;
+		this.notes_task = notes_task;
+		this.status_task = status_task;
+		this.id_project = id_project;
+		this.id_user = id_user;
 	}
-	
-	
-	public int getIdTask() {
+
+	public int getId_task() {
 		return id_task;
 	}
-	
-	public String getNameTask() {
+
+	public void setId_task(int id_task) {
+		this.id_task = id_task;
+	}
+
+	public String getName_task() {
 		return name_task;
 	}
 
-	public void setNameTask(String nameTask) {
-		this.name_task = nameTask;
+	public void setName_task(String name_task) {
+		this.name_task = name_task;
 	}
 
-	public String getDescription() {
+	public String getDesc_task() {
 		return desc_task;
 	}
 
-	public void setDescription(String description) {
-		this.desc_task = description;
+	public void setDesc_task(String desc_task) {
+		this.desc_task = desc_task;
 	}
 
-	public String getdateStart() {
+	public String getDateBegin_task() {
 		return dateBegin_task;
 	}
 
-	public void setdateStart(String dateStart) {
-		this.dateBegin_task = dateStart;
+	public void setDateBegin_task(String dateBegin_task) {
+		this.dateBegin_task = dateBegin_task;
 	}
 
-	public String getdateFinish() {
+	public String getDateEnd_task() {
 		return dateEnd_task;
 	}
 
-	public void setdateFinish(String dateFinish) {
-		this.dateEnd_task = dateFinish;
+	public void setDateEnd_task(String dateEnd_task) {
+		this.dateEnd_task = dateEnd_task;
 	}
 
-	public String getNotes() {
+	public int getIdResponsible_task() {
+		return idResponsible_task;
+	}
+
+	public void setIdResponsible_task(int idResponsible_task) {
+		this.idResponsible_task = idResponsible_task;
+	}
+
+	public String getNotes_task() {
 		return notes_task;
 	}
 
-	public void setNotes(String notes) {
-		this.notes_task = notes;
+	public void setNotes_task(String notes_task) {
+		this.notes_task = notes_task;
 	}
 
-	public String getResponsable() {
-		return resp_task;
-	}
-
-	public void setResponsable(String responsable) {
-		this.resp_task = responsable;
-	}
-
-	
-	public void setStatus(String status) {
-		this.status_task = status;
-	}
-	
-	public String getStatus() {
+	public String getStatus_task() {
 		return status_task;
 	}
-	public boolean validate () {
-		return this.status_task.equals("Task");
+
+	public void setStatus_task(String status_task) {
+		this.status_task = status_task;
 	}
+
+	public int getId_user() {
+		return id_user;
+	}
+
+	public void setId_user(int id_user) {
+		this.id_user = id_user;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+	
+	
+	
+
 }
 
