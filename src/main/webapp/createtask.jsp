@@ -60,9 +60,9 @@
                                 Fecha de inicio / Fecha de fin
                             </th>
                             <th class="contenttable">
-                                <input id="dateform" type="date" name="dateStart" required="true"/>
+                                <input id="dateform" type="text" name="dateStart" required="true"/>
                                  hasta 
-                                <input id="dateform" type="date" name="dateFinish" required="true"/> 
+                                <input id="dateform" type="text" name="dateFinish" required="true"/> 
                             </th>
                         </tr>
                         <tr>
@@ -71,27 +71,12 @@
                             </th>
                             <th class="contenttable">
                                 <select  class="selectionbuton" name="responsable" required="true">
-                                    <option>---Elige una opción---</option>
-                                    <option>Juan Maria</option>
-                                    <option>Jerges Gonzalez</option>
-                                    <option>Rubén López</option>
-                                    <option>David Bisbal</option>
-                                    <option>Chenoa</option>
-                                </select>
-                            </th>
-                        </tr>
-                        <tr>
-                            <th class="namecontent">
-                                Prioridad de la tarea
-                            </th>
-                            <th class="contenttable">
-                                <select class="selectionbuton" name="priority" required="true">
-                                    <option>---Elige una opción---</option>
-                                    <option>Muy baja</option>
-                                    <option>Baja</option>
-                                    <option>Media</option>
-                                    <option>Alta</option>
-                                    <option>Muy alta</option>
+                                    <option value= "0" >---Elige una opción---</option>
+                                    <option value= "1">Juan Maria</option>
+                                    <option value= "2">Jerges Gonzalez</option>
+                                    <option value= "3">Rubén López</option>
+                                    <option value= "4">David Bisbal</option>
+                                    <option value= "5">Chenoa</option>
                                 </select>
                             </th>
                         </tr>
@@ -101,12 +86,12 @@
                             </th>
                             <th class="contenttable">
                                 <select class="selectionbuton" name="proyecto_asociado">
-                                    <option>---Elige una opción---</option>
-                                    <option>Proyecto 1</option>
-                                    <option>Proyecto 2</option>
-                                    <option>Proyecto 3</option>
-                                    <option>Proyecto 4</option>
-                                    <option>Proyecto 5</option>
+                                    <option value= "0">---Elige una opción---</option>
+                                    <option value= "1">Proyecto 1</option>
+                                    <option value= "2">Proyecto 2</option>
+                                    <option value= "3">Proyecto 3</option>
+                                    <option value= "4">Proyecto 4</option>
+                                    <option value= "5">Proyecto 5</option>
                                 </select>
                             </th>
                         </tr>
@@ -116,7 +101,7 @@
                             </th>
                             <th class="contenttable">
                                 <select  class="selectionbuton" name="status" required="true">
-                                    <option value="">---Elige una opción---</option>
+                                    <option value="0">---Elige una opción---</option>
                                     <option value="1">Acabado</option>
                                     <option value="2">Sin empezar</option>
                                     <option value="3">En curso</option>

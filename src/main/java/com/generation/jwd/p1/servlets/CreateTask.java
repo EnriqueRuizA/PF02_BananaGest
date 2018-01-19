@@ -19,6 +19,7 @@ import javax.servlet.http.HttpSession;
 
 import com.generation.jwd.p1.beans.TaskBean;
 import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
 
 
 @WebServlet("/createtask")
@@ -34,7 +35,7 @@ public class CreateTask extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
-
+	    response.sendRedirect("createtask.jsp");   
 		
 	}
 
@@ -63,42 +64,38 @@ public class CreateTask extends HttpServlet {
 			
 			System.out.println("Conexion realizada");
 			
-			TaskBean createTask = new TaskBean();
-			
-			createTask.setName_task(request.getParameter("name_task"));
-			createTask.setDesc_task(request.getParameter("desc_task"));
-			createTask.convertStringToTimestamp(request.getParameter("dateBegin_task"));
-			createTask.convertStringToTimestamp(request.getParameter("dateEnd_task"));
-			System.out.println("datos fechas");
-//			createTask.setDateBegin_task(request.getParameter("dateBegin_task"));
-//			createTask.setDateEnd_task(request.getParameter("dateEnd_task"));
-			createTask.setNotes_task(request.getParameter("notes_task"));
-			createTask.setStatus_task(request.getParameter("status_task"));
-						
-			
-			
-			System.out.println("se ha recogido un dato del formulario");		
-			
-			PreparedStatement addTask = 
-					bananaconn.prepareStatement(
-							"INSERT INTO tasks(name_task, desc_task, dateBegin_task, dateEnd_task, notes_task, status_task) VALUES (?, ?, ?, ?, ?, ?)",
-							Statement.RETURN_GENERATED_KEYS);
-				
-			addTask.setString(1, "name_task");
-			addTask.setString(2, "desc_task");
-			addTask.setTimestamp(3, createTask.convertStringToTimestamp(request.getParameter("dateBegin_task")));
-			addTask.setTimestamp(4, createTask.convertStringToTimestamp(request.getParameter("dateEnd_task")));
-			addTask.setString(5, "notes_task");
-			addTask.setString(6, "status_task");
-			
-			addTask.executeUpdate();
-			System.out.println("se ha añadido un campo a la BBDD");
+            TaskBean createTask = new TaskBean();
+            
+            createTask.setName_task(request.getParameter("name_task"));
+            createTask.setDesc_task(request.getParameter("desc_task"));      
+            createTask.setDateBegin_task(request.getParameter("dateBegin_task"));
+            createTask.setDateEnd_task(request.getParameter("dateEnd_task"));
+            createTask.setDateBegin_task(request.getParameter("dateBegin_task"));
+            createTask.setDateEnd_task(request.getParameter("dateEnd_task"));
+            createTask.setNotes_task(request.getParameter("notes_task"));
+            createTask.setStatus_task(request.getParameter("status_task"));
+            
+            System.out.println("se ha recogido un dato del formulario");        
+            
+            PreparedStatement addTask = 
+                    bananaconn.prepareStatement(
+                            "INSERT INTO tasks(name_task, desc_task, dateBegin_task, dateEnd_task, notes_task, status_task) VALUES (?, ?, ?, ?, ?, ?)");
+                
+            addTask.setString(1, createTask.getName_task());
+            addTask.setString(2, createTask.getDesc_task());
+            addTask.setString(3, createTask.getDateBegin_task());
+            addTask.setString(4, createTask.getDateEnd_task());
+            addTask.setString(5, createTask.getNotes_task());
+            addTask.setString(6, createTask.getStatus_task());
+            
+            addTask.executeUpdate();
+            System.out.println("se ha añadido una línea a la BBDD de Task");
 			
 			HttpSession session_name= (HttpSession)request.getSession();
 			
 			
 			if(createTask.validate() == true) {
-		    	 session_name.setAttribute("saveTask", "A new task has been created");
+		    	 session_name.setAttribute("saveTask", createTask);
 		    	 session_name.setAttribute("task", createTask.getName_task());
 		         request.getRequestDispatcher("homeuser.jsp").forward(request, response);
 		     } else {
