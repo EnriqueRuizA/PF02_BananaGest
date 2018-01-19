@@ -3,7 +3,6 @@ package com.generation.jwd.p1.servlets;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -50,7 +49,7 @@ public class LoginServlet extends HttpServlet {
 		try {
 			Class.forName("com.mysql.jdbc.Driver").newInstance();
 			
-			input = new FileInputStream("C:\\Users\\Arranque 1\\git\\PF02_BananaGest\\src\\main\\webapp\\doc\\config.properties");
+			input = new FileInputStream("C:\\Users\\Arranque 1\\git\\PF02_BananaGest\\src\\main\\java\\com\\generation\\jwd\\p1\\servlets\\config.properties");
 			prop.load(input);
 			
 			String driver = prop.getProperty("jdbc.driver");
