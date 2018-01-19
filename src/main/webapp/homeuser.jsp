@@ -18,7 +18,7 @@
 		<main>
 			<section class="botones">
 				<p>
-					<a href="">
+					<a href="createproject.jsp">
 						<input type="submit" name="boton" value="Crear proyecto" style="width:60%">
 					</a>
 					<a href="#">
