@@ -27,7 +27,7 @@
                             </th>
                             <th class="contenttable">
                                 <input style="background-color:#F5BFB2;" type="text" placeholder="Nombre de la tarea" required="true"
-                                name="nameTask" autofocus/>
+                                name="name_task" autofocus/>
                             </th>
                         </tr>
                         <tr>
@@ -35,7 +35,7 @@
                                 Descripción de la tarea
                             </th>
                             <th class="contenttable">
-                                <textarea name="description" required="true" rows="15" cols="60"></textarea>
+                                <textarea name="desc_task" required="true" rows="15" cols="60"></textarea>
                             </th>
                         </tr>
                         <tr>
@@ -43,7 +43,7 @@
                                 Notas
                             </th>
                             <th class="contenttable">
-                                <textarea name="notes" required="true" rows="15" cols="60"
+                                <textarea name="notes_task" required="true" rows="15" cols="60"
                                  ></textarea>
                             </th>
                         </tr>
@@ -60,9 +60,9 @@
                                 Fecha de inicio / Fecha de fin
                             </th>
                             <th class="contenttable">
-                                <input id="dateform" type="text" name="dateStart" required="true"/>
+                                <input id="dateform" type="text" name="dateBegin_task" required="true"/>
                                  hasta 
-                                <input id="dateform" type="text" name="dateFinish" required="true"/> 
+                                <input id="dateform" type="text" name="dateEnd_task" required="true"/> 
                             </th>
                         </tr>
                         <tr>
@@ -70,7 +70,7 @@
                                 Responsable
                             </th>
                             <th class="contenttable">
-                                <select  class="selectionbuton" name="responsable" required="true">
+                                <select  class="selectionbuton" name="idResponsible_task" required="true">
                                     <option value= "0" >---Elige una opción---</option>
                                     <option value= "1">Juan Maria</option>
                                     <option value= "2">Jerges Gonzalez</option>
@@ -100,7 +100,7 @@
                                 Estado
                             </th>
                             <th class="contenttable">
-                                <select  class="selectionbuton" name="status" required="true">
+                                <select  class="selectionbuton" name="status_task" required="true">
                                     <option value="0">---Elige una opción---</option>
                                     <option value="1">Acabado</option>
                                     <option value="2">Sin empezar</option>

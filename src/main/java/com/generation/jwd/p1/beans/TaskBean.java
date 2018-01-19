@@ -101,15 +101,15 @@ public class TaskBean implements Serializable {
         this.id_user = id_user;
     }
     
-//    public boolean validate() {
-//        
-//        boolean bool = false;
-//        if("formtask" != null) {
-//            bool = true;
-//            
-//        }
-//        return bool;
-//    }
+    public boolean validate() {
+        
+        boolean bool = false;
+        if("formtask" != null) {
+            bool = true;
+            
+        }
+        return bool;
+    }
 //    
 //    public Timestamp convertStringToTimestamp(String str_date) throws ParseException {
 //        

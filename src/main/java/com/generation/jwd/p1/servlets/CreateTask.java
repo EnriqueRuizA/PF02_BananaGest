@@ -67,12 +67,10 @@ public class CreateTask extends HttpServlet {
             TaskBean createTask = new TaskBean();
             
             createTask.setName_task(request.getParameter("name_task"));
-            createTask.setDesc_task(request.getParameter("desc_task"));      
-            createTask.setDateBegin_task(request.getParameter("dateBegin_task"));
-            createTask.setDateEnd_task(request.getParameter("dateEnd_task"));
-            createTask.setDateBegin_task(request.getParameter("dateBegin_task"));
-            createTask.setDateEnd_task(request.getParameter("dateEnd_task"));
+            createTask.setDesc_task(request.getParameter("desc_task"));   
             createTask.setNotes_task(request.getParameter("notes_task"));
+            createTask.setDateBegin_task(request.getParameter("dateBegin_task"));
+            createTask.setDateEnd_task(request.getParameter("dateEnd_task"));
             createTask.setStatus_task(request.getParameter("status_task"));
             
             System.out.println("se ha recogido un dato del formulario");        
