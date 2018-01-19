@@ -28,25 +28,20 @@ section{
 }
 .tareas {
     float: left;    /**/
-    width: 74%;    
+    width: 73%;
     border-style: solid;
     text-align: center;
     margin-top: 20px;
     margin-bottom:10px;
-    margin-left: 10px;
     margin-left: 10px;
     text-align: top;            /**/
 }
 .tareas_2 {
-    float: center;    /**/
-    width: 75%;    
+    float: left;
     border-style: solid;
-    text-align: center;
-    margin-top: 20px;
+    width: 96%;
+    margin-left: 10px;
     margin-bottom:10px;
-    margin-left: 10px;
-    margin-left: 10px;
-    text-align: top;            /**/
 }
 a{
     color: black;
