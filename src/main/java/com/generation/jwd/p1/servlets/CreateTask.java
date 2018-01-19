@@ -17,7 +17,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.generation.jwd.p1.beans.ProjectBean;
 import com.generation.jwd.p1.beans.TaskBean;
+import com.generation.jwd.p1.beans.UserBean;
+
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 
@@ -47,7 +50,7 @@ public class CreateTask extends HttpServlet {
 				
 		try {
 			
-			input = new FileInputStream("C:\\Users\\Arranque 1\\git\\PF02_BananaGest\\src\\main\\webapp\\doc\\config.properties");
+			input = new FileInputStream("C:\\Users\\Arranque 1\\Downloads\\config.properties");
 			prop.load(input);
 			
 			String driver = prop.getProperty("jdbc.driver");
@@ -73,11 +76,17 @@ public class CreateTask extends HttpServlet {
             createTask.setDateEnd_task(request.getParameter("dateEnd_task"));
             createTask.setStatus_task(request.getParameter("status_task"));
             
-            System.out.println("se ha recogido un dato del formulario");        
+            UserBean createTask1 = new UserBean();
+            createTask1.setName_user(request.getParameter("name_user"));
+            
+            ProjectBean createTask2 = new ProjectBean();
+            createTask2.setName_project(request.getParameter("name_project"));
+            
+            System.out.println("Se ha recogido un dato del formulario");        
             
             PreparedStatement addTask = 
                     bananaconn.prepareStatement(
-                            "INSERT INTO tasks(name_task, desc_task, dateBegin_task, dateEnd_task, notes_task, status_task) VALUES (?, ?, ?, ?, ?, ?)");
+                            "INSERT INTO tasks(name_task, desc_task, notes_task, dateBegin_task, dateEnd_task, status_task) VALUES (?, ?, ?, ?, ?, ?)");
                 
             addTask.setString(1, createTask.getName_task());
             addTask.setString(2, createTask.getDesc_task());

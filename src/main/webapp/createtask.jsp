@@ -51,9 +51,6 @@
                             <th class="namecontent">
                                 Añadir archivos adjuntos de la tarea
                             </th>
-                            <th class="contenttable">
-                                <input id="attached" type="file" placeholder="Nombre de la tarea" name="adjunto" />
-                            </th>
                         </tr>
                         <tr>
                             <th class="namecontent">
@@ -70,7 +67,7 @@
                                 Responsable
                             </th>
                             <th class="contenttable">
-                                <select  class="selectionbuton" name="idResponsible_task" required="true">
+                                <select  class="selectionbuton" name="name_user" required="true">
                                     <option value= "0" >---Elige una opción---</option>
                                     <option value= "1">Juan Maria</option>
                                     <option value= "2">Jerges Gonzalez</option>
@@ -85,7 +82,7 @@
                                 Asociada al proyecto
                             </th>
                             <th class="contenttable">
-                                <select class="selectionbuton" name="proyecto_asociado">
+                                <select class="selectionbuton" name="name_project">
                                     <option value= "0">---Elige una opción---</option>
                                     <option value= "1">Proyecto 1</option>
                                     <option value= "2">Proyecto 2</option>
