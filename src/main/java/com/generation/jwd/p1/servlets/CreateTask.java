@@ -47,7 +47,7 @@ public class CreateTask extends HttpServlet {
 				
 		try {
 			
-			input = new FileInputStream("C:\\Users\\Arranque 1\\git\\PF02_BananaGest\\src\\main\\webapp\\doc\\config.properties");
+			input = new FileInputStream("C:\\Users\\Arranque 1\\git\\PF02_BananaGest\\src\\main\\webapp\\doc");
 			prop.load(input);
 			
 			String driver = prop.getProperty("jdbc.driver");
