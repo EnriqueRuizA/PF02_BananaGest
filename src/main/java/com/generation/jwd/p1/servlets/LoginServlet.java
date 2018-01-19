@@ -49,7 +49,7 @@ public class LoginServlet extends HttpServlet {
 		try {
 			Class.forName("com.mysql.jdbc.Driver").newInstance();
 			
-			input = new FileInputStream("C:\\Users\\Arranque 1\\git\\PF02_BananaGest\\src\\main\\java\\com\\generation\\jwd\\p1\\servlets\\config.properties");
+			input = new FileInputStream("C:\\config.properties");
 			prop.load(input);
 			
 			String driver = prop.getProperty("jdbc.driver");
