@@ -17,7 +17,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.generation.jwd.p1.beans.ProjectBean;
 import com.generation.jwd.p1.beans.TaskBean;
+import com.generation.jwd.p1.beans.UserBean;
+
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 
@@ -64,8 +67,7 @@ public class CreateTask extends HttpServlet {
 			
 			System.out.println("Conexion realizada");
 			
-            TaskBean createTask = new TaskBean();
-            
+			TaskBean createTask = new TaskBean();
             createTask.setName_task(request.getParameter("name_task"));
             createTask.setDesc_task(request.getParameter("desc_task"));   
             createTask.setNotes_task(request.getParameter("notes_task"));
@@ -73,11 +75,17 @@ public class CreateTask extends HttpServlet {
             createTask.setDateEnd_task(request.getParameter("dateEnd_task"));
             createTask.setStatus_task(request.getParameter("status_task"));
             
-            System.out.println("se ha recogido un dato del formulario");        
+            UserBean createTask1 = new UserBean();
+            createTask1.setName_user(request.getParameter("name_user"));
+            
+            ProjectBean createTask2 = new ProjectBean();
+            createTask2.setName_project(request.getParameter("name_project"));
+            
+            System.out.println("Se ha recogido un dato del formulario");        
             
             PreparedStatement addTask = 
                     bananaconn.prepareStatement(
-                            "INSERT INTO tasks(name_task, desc_task, dateBegin_task, dateEnd_task, notes_task, status_task) VALUES (?, ?, ?, ?, ?, ?)");
+                            "INSERT INTO tasks(name_task, desc_task, notes_task, dateBegin_task, dateEnd_task, status_task) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
                 
             addTask.setString(1, createTask.getName_task());
             addTask.setString(2, createTask.getDesc_task());
@@ -85,6 +93,8 @@ public class CreateTask extends HttpServlet {
             addTask.setString(4, createTask.getDateEnd_task());
             addTask.setString(5, createTask.getNotes_task());
             addTask.setString(6, createTask.getStatus_task());
+            addTask.setString(7, createTask1.getName_user());
+            addTask.setString(8, createTask2.getName_project());
             
             addTask.executeUpdate();
             System.out.println("se ha añadido una línea a la BBDD de Task");
