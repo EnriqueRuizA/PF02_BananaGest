@@ -12,7 +12,7 @@
         <header>
             <div class="head"><img src="images/profile.png" width="55" height="55"><h3>Bienvenido/a ${name_user}</h3>
             <a href="http://127.0.0.1:8080/PF02_BananaGest/login#">Editar perfil</a></div>
-            <div class="head"><h1>Banana GEST</h1><a href="http://127.0.0.1:8080/PF02_BananaGest/homeuser.jsp"><img src="./Document_files/bananas_medio.png"></a></div>
+            <div class="head"><h1>Banana GEST</h1><a href="http://127.0.0.1:8080/PF02_BananaGest/homeuser.jsp"><img src="./images/bananas_medio.png"></a></div>
             <div class="head"><h4><a href="http://127.0.0.1:8080/PF02_BananaGest/login.jsp">Logout</a></h4></div>    
         </header>
         <main>
@@ -20,7 +20,7 @@
             <sidebar class="tareas">
                 <nav>
                     <h2>Tus tareas</h2>
-                    <img src="./Document_files/search.png">
+                    <img src="./images/search.png">
                     <input type="text" name="navegador" placeholder="Search">
                     <p>
                         <div class="tareas_2">
@@ -41,7 +41,7 @@
                         <input type="submit" name="boton" value="Crear proyecto" style="width:60%">
                     </a>
                     <a href="http://127.0.0.1:8080/PF02_BananaGest/login#">
-                        <img src="./Document_files/add.png" style="width:3%">
+                        <img src="./images/add.png" style="width:3%">
                     </a>
                 </p>
                 <p>
@@ -49,7 +49,7 @@
                         <input type="submit" name="boton" value="Crear tarea" style="width:60%">
                     </a>
                     <a href="http://127.0.0.1:8080/PF02_BananaGest/createtask.jsp">
-                        <img src="./Document_files/add.png" style="width:3%">
+                        <img src="./images/add.png" style="width:3%">
                     </a>
                 </p>    
                 <p>
