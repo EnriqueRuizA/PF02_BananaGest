@@ -49,7 +49,8 @@ public class LoginServlet extends HttpServlet {
 		try {
 			Class.forName("com.mysql.jdbc.Driver").newInstance();
 			
-			input = new FileInputStream("C:\\config.properties");
+//			input = new FileInputStream("C:\\config.properties");
+			input = new FileInputStream("C:\\Users\\Arranque 1\\Downloads\\config.properties");
 			prop.load(input);
 			
 			String driver = prop.getProperty("jdbc.driver");
@@ -69,31 +70,31 @@ public class LoginServlet extends HttpServlet {
 			
 			ResultSet rs = selectUser.executeQuery();
 			
+			boolean validator = true;
+			
 			while(rs.next()) {
 				int id_user = rs.getInt(1);
 				String name_user = rs.getString(2);
 				String surname_user = rs.getString(3);
 				String email_user = rs.getString(4);
 				String password_user = rs.getString(5);
-				
-				boolean validator = true;
-				
-				for(int i=0; i < 5; i++) {
-					if(validator = true && email_user.equals(userBean.getEmail_user()) && password_user.equals(userBean.getPassword_user())) {
-						session.setAttribute("id_user", id_user);
-						session.setAttribute("name_user", name_user);
-						session.setAttribute("surname_user", surname_user);
-						request.getRequestDispatcher("homeuser.jsp").forward(request, response);
-
-						break;
-					}else {
-						validator = false;
-					}
+			
+				if(validator == true && email_user.equals(userBean.getEmail_user()) && password_user.equals(userBean.getPassword_user())) {
+					session.setAttribute("id_user", id_user);
+					session.setAttribute("name_user", name_user);
+					session.setAttribute("surname_user", surname_user);
+					request.getRequestDispatcher("homeuser.jsp").forward(request, response);
+					System.out.println("Conexion realizada 1");
+					break;	
+				}else{
+					validator = false;
 				}
-				
-			if (validator = false) {
-				request.getRequestDispatcher("login.jsp").forward(request, response);
 			}
+		
+			if (validator == false) {
+				System.out.println("Conexion realizada 2");
+				request.getRequestDispatcher("login.jsp").forward(request, response);
+				session.setAttribute("error", "El nombre y/o contraseña no son correctos. Inténtelo de nuevo.");
 			}
 			
 			rs.close();
