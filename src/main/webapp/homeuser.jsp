@@ -37,7 +37,7 @@
             </sidebar>
             <section class="botones">
                     <p>
-                    <a href="http://127.0.0.1:8080/PF02_BananaGest/login">
+                    <a href="http://127.0.0.1:8080/PF02_BananaGest/createproject.jsp">
                         <input type="submit" name="boton" value="Crear proyecto" style="width:60%">
                     </a>
                     <a href="http://127.0.0.1:8080/PF02_BananaGest/login#">
