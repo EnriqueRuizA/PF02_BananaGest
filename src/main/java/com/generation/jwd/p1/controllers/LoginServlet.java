@@ -1,4 +1,4 @@
-package com.generation.jwd.p1.servlets;
+package com.generation.jwd.p1.controllers;
 
 import java.io.FileInputStream;
 import java.io.IOException;
