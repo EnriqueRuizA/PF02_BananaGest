@@ -31,6 +31,7 @@ public class CreateTask extends HttpServlet {
        
     
     public CreateTask() {
+    	
         super();
         
     }
@@ -68,18 +69,13 @@ public class CreateTask extends HttpServlet {
 			System.out.println("Conexion realizada");
 			
 			TaskBean createTask = new TaskBean();
+			
             createTask.setName_task(request.getParameter("name_task"));
             createTask.setDesc_task(request.getParameter("desc_task"));   
             createTask.setNotes_task(request.getParameter("notes_task"));
             createTask.setDateBegin_task(request.getParameter("dateBegin_task"));
             createTask.setDateEnd_task(request.getParameter("dateEnd_task"));
             createTask.setStatus_task(request.getParameter("status_task"));
-            
-            UserBean createTask1 = new UserBean();
-            createTask1.setName_user(request.getParameter("name_user"));
-            
-            ProjectBean createTask2 = new ProjectBean();
-            createTask2.setName_project(request.getParameter("name_project"));
             
             System.out.println("Se ha recogido un dato del formulario");        
             
@@ -93,30 +89,30 @@ public class CreateTask extends HttpServlet {
             addTask.setString(4, createTask.getDateEnd_task());
             addTask.setString(5, createTask.getNotes_task());
             addTask.setString(6, createTask.getStatus_task());
-            addTask.setString(7, createTask1.getName_user());
-            addTask.setString(8, createTask2.getName_project());
             
             addTask.executeUpdate();
             System.out.println("se ha añadido una línea a la BBDD de Task");
             
-            
-            
-			
-			HttpSession session_name= (HttpSession)request.getSession();
-			
 			
 			if(createTask.validate() == true) {
-		    	 session_name.setAttribute("saveTask", createTask);
-		    	 session_name.setAttribute("task", createTask.getName_task());
+				
+		    	 request.setAttribute("saveTask", createTask);
+//		    	 request.setAttribute("task", createTask.getName_task());
 		         request.getRequestDispatcher("homeuser.jsp").forward(request, response);
+		         System.out.println("se ha creado tarea y redirecciona a homeuser.jsp");
+
 		     } else {
-		    	 session_name.setAttribute("saveTask", "error: a new task has not created");
+		    	 
+		    	 request.setAttribute("saveTask", "error: a new task has not created");
 		         request.getRequestDispatcher("createtask.jsp").forward(request, response);
+		         System.out.println("no se ha creado tarea y redirecciona a createtask.jsp");
 		     }
+			
 			bananaconn.close();
 			System.out.println("conexion cerrada");
 			
 		} catch (Exception e) {
+			
 			System.out.println("error" + e.getMessage());
 			
 		}
