@@ -1,19 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>Document</title>
+        <title>Tu home de usuario/a</title>
         <link rel="stylesheet" type="text/css" href="css/homeuser.css">
     </head>
     <body>
         <header>
             <div class="head"><img src="images/profile.png" width="55" height="55"><h3>Bienvenido/a ${name_user}</h3>
             <a href="http://127.0.0.1:8080/PF02_BananaGest/login#">Editar perfil</a></div>
-            <div class="head"><h1>Banana GEST</h1><a href="http://127.0.0.1:8080/PF02_BananaGest/homeuser.jsp"><img src="./images/bananas_medio.png"></a></div>
-            <div class="head"><h4><a href="http://127.0.0.1:8080/PF02_BananaGest/login.jsp">Logout</a></h4></div>    
+            <div class="head"><h1>Banana GEST</h1><a href="homeuser.jsp"><img src="./images/bananas_medio.png"></a></div>
+            <div class="head"><h4><a href="login.jsp">Logout</a></h4></div>    
         </header>
         <main>
             

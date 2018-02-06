@@ -62,21 +62,5 @@
 				<span class="col-xs-12 col-sm-12 col-md-12 col-lg-12">Banana GEST - Todos los derechos reservados</span>
 			</div>
 		</footer>
-<!-- 		<script> -->
-<!-- // 			function validar(){ -->
-<!-- // 				var inpObj = document.getElementById("formulario"); -->
-<!-- // 				if (inpObj.checkValidity() == false) { -->
-<!-- // 					document.getElementById("error").innerHTML = "Usuario o contraseña incorrectos. Por favor, vuelve a introducirlos"; -->
-<!-- // 					document.getElementById("error").style.backgroundColor = "gainsboro"; -->
-<!-- // 					document.getElementById("error").style.color = "red"; -->
-<!-- // 					document.getElementById("error").style.textSize = "1.5em"; -->
-<!-- // 					document.getElementById("error").style.borderRadius = "5px"; -->
-<!-- // 					document.getElementById("error").style.borderStyle = "solid"; -->
-<!-- // 					document.getElementById("error").style.borderColor = "goldenrod"; -->
-<!-- // 					document.getElementById("error").style.marginLeft= "20%"; -->
-<!-- // 					document.getElementById("error").style.marginRight= "20%"; -->
-<!-- // 				} -->
-<!-- // 			} -->
-<!-- 		</script> -->
 	</body>
 </html>

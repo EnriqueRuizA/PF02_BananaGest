@@ -5,7 +5,7 @@
     <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>Crear tarea | Banana GEST</title>
+        <title>Crear proyecto | Banana GEST</title>
         <link rel="stylesheet" type="text/css" href="css/createtask.css">
     </head>
     <body>
@@ -45,11 +45,6 @@
                             <th class="contenttable">
                                 <textarea name="notes_task" required="true" rows="15" cols="60"
                                  ></textarea>
-                            </th>
-                        </tr>
-                        <tr>
-                            <th class="namecontent">
-                                Añadir archivos adjuntos del proyecto
                             </th>
                         </tr>
                         <tr>

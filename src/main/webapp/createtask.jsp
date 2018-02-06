@@ -49,11 +49,6 @@
                         </tr>
                         <tr>
                             <th class="namecontent">
-                                Añadir archivos adjuntos de la tarea
-                            </th>
-                        </tr>
-                        <tr>
-                            <th class="namecontent">
                                 Fecha de inicio / Fecha de fin
                             </th>
                             <th class="contenttable">
