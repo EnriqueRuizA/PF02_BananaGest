@@ -17,9 +17,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.generation.jwd.p1.beans.ProjectBean;
-import com.generation.jwd.p1.beans.TaskBean;
-import com.generation.jwd.p1.beans.UserBean;
+import com.generation.jwd.p1.beans.Project;
+import com.generation.jwd.p1.beans.Task;
+import com.generation.jwd.p1.beans.User;
 
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
@@ -68,7 +68,7 @@ public class CreateTask extends HttpServlet {
 			
 			System.out.println("Conexion realizada");
 			
-			TaskBean createTask = new TaskBean();
+			Task createTask = new Task();
 			
             createTask.setName_task(request.getParameter("name_task"));
             createTask.setDesc_task(request.getParameter("desc_task"));   

@@ -1,6 +1,6 @@
 package com.generation.jwd.p1.beans;
 import java.io.Serializable;
-public class UserBean implements Serializable {
+public class User implements Serializable {
     
     private static final long serialVersionUID = 1L;
     private int id_user;
@@ -9,10 +9,10 @@ public class UserBean implements Serializable {
     private String email_user;
     private String password_user;
     
-    public UserBean() {
+    public User() {
     }
     
-    public UserBean(int id_user, String name_user, String surname_user, String email_user, String password_user){
+    public User(int id_user, String name_user, String surname_user, String email_user, String password_user){
         this.id_user = id_user;
         this.name_user = name_user;
         this.surname_user = surname_user;

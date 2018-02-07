@@ -1,7 +1,7 @@
 package com.generation.jwd.p1.beans;
 import java.io.Serializable;
 
-public class TaskBean implements Serializable {
+public class Task implements Serializable {
     
     
     private static final long serialVersionUID = 1L;
@@ -17,9 +17,9 @@ public class TaskBean implements Serializable {
     private int id_project;
     private int id_user;
     
-    public TaskBean() {};
+    public Task() {};
     
-    public TaskBean(int id_task, String name_task, String desc_task, String dateBegin_task, 
+    public Task(int id_task, String name_task, String desc_task, String dateBegin_task, 
             String dateEnd_task, int idResponsible_task, String notes_task,
                     String status_task, int id_project, int id_user) {
         

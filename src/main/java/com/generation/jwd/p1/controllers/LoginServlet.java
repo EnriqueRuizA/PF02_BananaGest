@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import com.generation.jwd.p1.beans.UserBean;
+import com.generation.jwd.p1.beans.User;
 import com.mysql.jdbc.PreparedStatement;
 
 
@@ -37,7 +37,7 @@ public class LoginServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		UserBean userBean = new UserBean();
+		User userBean = new User();
 		userBean.setEmail_user(request.getParameter("email_user"));
 		userBean.setPassword_user(request.getParameter("password_user"));
 		

@@ -1,6 +1,6 @@
 package com.generation.jwd.p1.beans;
 import java.io.Serializable;
-public class ProjectBean implements Serializable {
+public class Project implements Serializable {
     
     private static final long serialVersionUID = 1L;
     private int id_project;
@@ -11,11 +11,11 @@ public class ProjectBean implements Serializable {
     private String notes_project;
     private String status_project;
     
-    public ProjectBean() {
+    public Project() {
     	
     }
     
-    public ProjectBean(int id_project, String name_project, String desc_project, String dateBegin_project, String dateEnd_project, String notes_project, String status_project){
+    public Project(int id_project, String name_project, String desc_project, String dateBegin_project, String dateEnd_project, String notes_project, String status_project){
         this.setId_project(id_project);
         this.setName_project(name_project);
         this.setDesc_project(desc_project);
