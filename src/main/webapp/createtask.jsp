@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
-<jsp:useBean id="saveTask" class="com.generation.jwd.p1.beans.TaskBean" scope="request"></jsp:useBean>
+<jsp:useBean id="saveTask" class="com.generation.jwd.p1.beans.Task" scope="request"></jsp:useBean>
     <html lang="en">
     <head>
         <meta charset="UTF-8">
