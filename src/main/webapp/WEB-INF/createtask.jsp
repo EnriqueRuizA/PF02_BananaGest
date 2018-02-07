@@ -78,12 +78,12 @@
                             </th>
                             <th class="contenttable">
                                 <select class="selectionbuton" name="name_project">
-                                    <option value= "0">---Elige una opción---</option>
-                                    <option value= "1">Proyecto 1</option>
-                                    <option value= "2">Proyecto 2</option>
-                                    <option value= "3">Proyecto 3</option>
-                                    <option value= "4">Proyecto 4</option>
-                                    <option value= "5">Proyecto 5</option>
+                                 <option value= "0" >---Elige una opción---</option>
+                                    <option value= "1">Proyecto1</option>
+                                    <option value= "2">Proyecto2</option>
+                                    <option value= "3">Proyecto3</option>
+                                    <option value= "4">Proyecto4</option>
+                                    <option value= "5">Proyecto5</option>
                                 </select>
                             </th>
                         </tr>
