@@ -1,84 +1,98 @@
 package com.generation.jwd.p1.beans;
 import java.io.Serializable;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "projects")
 public class Project implements Serializable {
     
     private static final long serialVersionUID = 1L;
-    private int id_project;
-    private String name_project;
-    private String desc_project;
-    private String dateBegin_project;
-    private String dateEnd_project;
-    private String notes_project;
-    private String status_project;
+    
+    @Id @GeneratedValue
+    @Column(name = "id")
+    private int id;
+    
+    @Column(name ="name")
+    private String name;
+    
+    @Column(name ="desc")
+    private String desc;
+    
+    @Column(name = "dateBegin")
+    private String dateBegin;
+    
+    @Column(name = "dateEnd")
+    private String dateEnd;
+    
+    @Column(name = "notes")
+    private String notes;
+    
+    @Column(name = "status")
+    private String status;
     
     public Project() {
     	
     }
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getDesc() {
+		return desc;
+	}
+
+	public void setDesc(String desc) {
+		this.desc = desc;
+	}
+
+	public String getDateBegin() {
+		return dateBegin;
+	}
+
+	public void setDateBegin(String dateBegin) {
+		this.dateBegin = dateBegin;
+	}
+
+	public String getDateEnd() {
+		return dateEnd;
+	}
+
+	public void setDateEnd(String dateEnd) {
+		this.dateEnd = dateEnd;
+	}
+
+	public String getNotes() {
+		return notes;
+	}
+
+	public void setNotes(String notes) {
+		this.notes = notes;
+	}
+
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
     
-    public Project(int id_project, String name_project, String desc_project, String dateBegin_project, String dateEnd_project, String notes_project, String status_project){
-        this.setId_project(id_project);
-        this.setName_project(name_project);
-        this.setDesc_project(desc_project);
-        this.setDateBegin_project(dateBegin_project);
-        this.setDateEnd_project(dateEnd_project);
-        this.setNotes_project(notes_project);
-        this.setStatus_project(status_project);
-    }
-    
-	public int getId_project() {
-		return id_project;
-	}
-	
-	public void setId_project(int id_project) {
-		this.id_project = id_project;
-	}
-	
-	public String getName_project() {
-		return name_project;
-	}
-	
-	public void setName_project(String name_project) {
-		this.name_project = name_project;
-	}
-	
-	public String getDesc_project() {
-		return desc_project;
-	}
-	
-	public void setDesc_project(String desc_project) {
-		this.desc_project = desc_project;
-	}
-	
-	public String getDateBegin_project() {
-		return dateBegin_project;
-	}
-	
-	public void setDateBegin_project(String dateBegin_project) {
-		this.dateBegin_project = dateBegin_project;
-	}
-	
-	public String getDateEnd_project() {
-		return dateEnd_project;
-	}
-	
-	public void setDateEnd_project(String dateEnd_project) {
-		this.dateEnd_project = dateEnd_project;
-	}
-	
-	public String getNotes_project() {
-		return notes_project;
-	}
-	
-	public void setNotes_project(String notes_project) {
-		this.notes_project = notes_project;
-	}
-	
-	public String getStatus_project() {
-		return status_project;
-	}
-	
-	public void setStatus_project(String status_project) {
-		this.status_project = status_project;
-	}
-	
 }
