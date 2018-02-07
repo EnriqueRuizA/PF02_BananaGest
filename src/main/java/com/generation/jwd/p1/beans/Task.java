@@ -8,7 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="users")
+@Table(name = "task")
 public class Task implements Serializable {
     
     private static final long serialVersionUID = 1L;
