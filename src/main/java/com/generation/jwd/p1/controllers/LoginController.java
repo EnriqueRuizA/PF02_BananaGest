@@ -20,12 +20,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
-//@RequestMapping("/login")
+
 public class LoginController {	
 	
 	
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String showLogin() {
+		System.out.println("Entra en login");
 		return "login";
 	}
 	

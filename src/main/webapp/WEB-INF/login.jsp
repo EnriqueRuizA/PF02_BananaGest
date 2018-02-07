@@ -35,9 +35,7 @@
 						<div class="intro_user">
 						<a class="password" href="#">He olvidado mi contraseña</a>
 						</div>	
-						<div class="intro_user">
-							<button onclick="validar()">Log In</button>
-						</div>
+						<div class="intro_user"><a href="LoginController">Log In</a></div>
 					</form>										
 					<div class="intro_user">
 						<a href="https://twitter.com/?lang=es">
