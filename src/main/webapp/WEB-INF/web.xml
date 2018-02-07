@@ -20,10 +20,6 @@
       <servlet-class>com.generation.jwd.p1.servlets.HomeServlet</servlet-class>
   </servlet>
   <servlet>
-      <servlet-name>ReadAndWriteServlet</servlet-name>
-      <servlet-class>com.generation.jwd.p1.servlets.ReadAndWriteServlet</servlet-class>
-  </servlet>
-  <servlet>
       <servlet-name>LogoutServlet</servlet-name>
       <servlet-class>com.generation.jwd.p1.servlets.LogoutServlet</servlet-class>
   </servlet> 
@@ -38,10 +34,6 @@
   <servlet-mapping>
       <servlet-name>HomeServlet</servlet-name>
       <url-pattern>/HomeServlet</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-      <servlet-name>ReadAndWriteServlet</servlet-name>
-      <url-pattern>/ReadAndWriteServlet</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
       <servlet-name>LogoutServlet</servlet-name>
