@@ -1,12 +1,8 @@
 package com.generation.jwd.p1.controllers;
 
-
-
-import java.io.IOException;
-
-import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -19,18 +15,18 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class LogoutController {
 
 	@RequestMapping(value = "/logout", method = RequestMethod.POST)
-	public String closeSesion(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+	
+	public String logOut(HttpServletRequest request, HttpServletResponse response) {
+		System.out.println("inicio get");
 		response.setContentType("text/html");
-		Configuration cfg = new Configuration();
-		System.out.println("Iniciated configuration");
-		cfg.configure("hibernate.cfg.xml");
-		SessionFactory factory = cfg.buildSessionFactory();
-		System.out.println("opening session");
-		Session session = factory.openSession();
-		session.close();
-		System.out.println("Session clossd");
-		request.setAttribute("disconnected", "You have closed the session");
+		
+		HttpSession session = request.getSession();  
+        System.out.println("Inicio sesion");
+        session.invalidate();  
+        System.out.println("cerramos la sesion");
+        request.setAttribute("disconnect", "Has cerrado la sesion con exito");
+		System.out.println("Logout successful");
 		return "login";
 	}
+	
 }
