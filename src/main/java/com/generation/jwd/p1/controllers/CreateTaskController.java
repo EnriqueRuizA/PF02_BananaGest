@@ -38,14 +38,15 @@ public class CreateTaskController {
 	
 	@RequestMapping(method=RequestMethod.POST)
 	public String submit(HttpServletRequest request, HttpServletResponse response, 
-			@RequestParam( value ="name_task") String name,
-			@RequestParam( value ="desc_task") String desc,
-			@RequestParam( value ="notes_task") String notes,
-			@RequestParam( value ="dateBegin_task") String dateBegin,
-			@RequestParam( value ="dateEnd_task") String dateEnd,
-			@RequestParam( value ="name_user") int name_user,
-			@RequestParam( value ="name_project") int name_project,
-			@RequestParam( value ="status_task") String status) throws SecurityException, HeuristicMixedException, HeuristicRollbackException, RollbackException, SystemException {
+			@RequestParam("name_task") String name,
+			@RequestParam("desc_task") String desc,
+			@RequestParam("notes_task") String notes,
+			@RequestParam("dateBegin_task") String dateBegin,
+			@RequestParam("dateEnd_task") String dateEnd,
+			@RequestParam("name_user") int name_user,
+			@RequestParam("name_project") int name_project,
+			@RequestParam("status_task") String status)
+					throws SecurityException, HeuristicMixedException, HeuristicRollbackException, RollbackException, SystemException {
 		
 		System.out.println("######## POST #########");
 		
@@ -75,7 +76,7 @@ public class CreateTaskController {
 //        request.setAttribute("projectList", projects.values());
         
 		session.persist(createtask);
-		t.commit();
+		session.getTransaction().commit();
 		session.close();
 		
 		return "homeuser";
