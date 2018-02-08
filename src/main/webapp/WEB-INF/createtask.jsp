@@ -40,7 +40,7 @@
                         </tr>
                         <tr>
                             <th class="namecontent">
-                                Notas
+                                Notas 
                             </th>
                             <th class="contenttable">
                                 <textarea name="notes" required="true" rows="15" cols="60"
