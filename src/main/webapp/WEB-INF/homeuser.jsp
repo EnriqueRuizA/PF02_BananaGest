@@ -11,7 +11,7 @@
         <header>
             <div class="head"><img src="images/profile.png" width="55" height="55"><h3>Bienvenido/a ${name_user}</h3>
             <a href="#">Editar perfil</a></div>
-            <div class="head"><h1>Banana GEST</h1><a href="homeuser.jsp"><img src="images/bananas_medio.png"></a></div>
+            <div class="head"><h1>Banana GEST</h1><a href="HomeController"><img src="images/bananas_medio.png"></a></div>
             <div class="head"><h4><a href="LogoutController">Logout</a></h4></div>    
         </header>
         <main>
@@ -35,7 +35,7 @@
             </sidebar>
             <section class="botones">
                     <p>
-                    <a href="createproject.jsp">
+                    <a href="project">
                         <input type="submit" name="boton" value="Crear proyecto" style="width:60%">
                    	</a>
                    	<a href="#"> 
@@ -43,18 +43,13 @@
                     </a> 
                 </p>
                	<p>
-                   	<a href="createtask.jsp">
+                   	<a href="showform">
                         <input type="submit" name="boton" value="Crear tarea" style="width:60%">
                   	</a>
                     <a href="createtask.jsp">
                         <img src="images/add.png" style="width:3%">
                     </a>
                 </p>    
-                <p>
-                    <a href="#">
-                        <input type="submit" name="boton" value="Lista proyectos" style="width:40%">
-                    </a>
-                </p>
             </section>
         </main>
         <br>
