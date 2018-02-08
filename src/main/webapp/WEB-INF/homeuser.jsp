@@ -15,7 +15,6 @@
             <div class="head"><h4><a href="LogoutController">Logout</a></h4></div>    
         </header>
         <main>
-            
             <sidebar class="tareas">
                 <nav>
                     <h2>Tus tareas</h2>
