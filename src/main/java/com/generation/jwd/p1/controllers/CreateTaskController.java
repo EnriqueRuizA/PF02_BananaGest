@@ -22,6 +22,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.generation.jwd.p1.beans.Task;
 
@@ -33,20 +34,12 @@ public class CreateTaskController {
 	@RequestMapping(method=RequestMethod.GET)
 	public String printTask() {
 		
-				return "createtask";
+		return "createtask";
 	}
 	
 	@RequestMapping(method=RequestMethod.POST)
-	public String submit(HttpServletRequest request, HttpServletResponse response, 
-			@RequestParam("name_task") String name,
-			@RequestParam("desc_task") String desc,
-			@RequestParam("notes_task") String notes,
-			@RequestParam("dateBegin_task") String dateBegin,
-			@RequestParam("dateEnd_task") String dateEnd,
-			@RequestParam("name_user") int name_user,
-			@RequestParam("name_project") int name_project,
-			@RequestParam("status_task") String status)
-					throws SecurityException, HeuristicMixedException, HeuristicRollbackException, RollbackException, SystemException {
+	@ResponseBody
+	public String submit(HttpServletRequest request){
 		
 		System.out.println("######## POST #########");
 		
@@ -55,26 +48,22 @@ public class CreateTaskController {
         
         SessionFactory factory = cfg.buildSessionFactory();
         Session session = factory.openSession();
-        Transaction t = (Transaction) session.beginTransaction();
+        session.beginTransaction();
 		
-//        Map <Integer, String> users = new HashMap <Integer, String>();
-//		Map <Integer, String> projects = new HashMap <Integer, String>();
 
         Task createtask = new Task();
-        createtask.setName(name);
-        createtask.setDesc(desc);
-        createtask.setNotes(notes);
-        createtask.setDateBegin(dateBegin);
-        createtask.setDateEnd(dateEnd);
-        createtask.setId_user(name_user);
-        createtask.setId_project(name_project);
-        createtask.setStatus(status);
+        createtask.setName(request.getParameter("name"));
+        createtask.setDesc(request.getParameter("desc"));
+        createtask.setNotes(request.getParameter("notes"));
+        createtask.setDateBegin(request.getParameter("dateBegin"));
+        createtask.setDateEnd(request.getParameter("dateEnd"));
+        createtask.setId_user(Integer.parseInt(request.getParameter("id_user")));
+        createtask.setId_project(Integer.parseInt(request.getParameter("id_project")));
+        createtask.setStatus(request.getParameter("status"));
 		
         
         System.out.println("######## AFTER CREATETASK #########");
-//        request.setAttribute("userList", users.values());
-//        request.setAttribute("projectList", projects.values());
-        
+
 		session.persist(createtask);
 		session.getTransaction().commit();
 		session.close();
