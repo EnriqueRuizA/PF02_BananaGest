@@ -60,10 +60,11 @@ public class HomeController {
 				myTask = new Task();
 				myTask.setId(rs.getInt(1));
 				myTask.setName(rs.getString(2));
-				myTask.setDateBegin(rs.getString(3));
-				myTask.setDateEnd(rs.getString(4));
-				myTask.setDescription(rs.getString(4));
-				myTask.setState(rs.getString(5));				
+				myTask.setDesc(rs.getString(3));
+				myTask.setNotes(rs.getString(4));
+				myTask.setDateBegin(rs.getString(5));
+				myTask.setDateEnd(rs.getString(6));
+				myTask.setStatus(rs.getString(9));			
 				myTask.setId_user(rs.getInt(7));
 				taskList.add(myTask);	
 			}
