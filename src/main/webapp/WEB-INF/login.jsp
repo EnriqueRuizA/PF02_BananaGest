@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -21,7 +22,7 @@
 			<div class="row">
 				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 					<img id= "bananas" src="images/bananas_grande.png"/>
-					<div>${error}</div>
+					<c:out value="${error}"/>
 					<form action="login" method="post" id="formulario">
 						<p id="error"></p>
 						<div class="intro_user">
